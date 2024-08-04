@@ -1,5 +1,5 @@
 Flow report for sdcard
-Tue Jul 23 13:52:39 2024
+Mon Aug 05 00:42:04 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Tue Jul 23 13:52:39 2024      ;
+; Flow Status                        ; Successful - Mon Aug 05 00:42:04 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; sdcard                                     ;
 ; Top-level Entity Name              ; sdcard                                     ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 19 / 15,408 ( < 1 % )                      ;
-;     Total combinational functions  ; 19 / 15,408 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 19 / 15,408 ( < 1 % )                      ;
-; Total registers                    ; 19                                         ;
-; Total pins                         ; 11 / 347 ( 3 % )                           ;
+; Total logic elements               ; 71 / 15,408 ( < 1 % )                      ;
+;     Total combinational functions  ; 71 / 15,408 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 64 / 15,408 ( < 1 % )                      ;
+; Total registers                    ; 64                                         ;
+; Total pins                         ; 16 / 347 ( 5 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/23/2024 13:52:30 ;
+; Start date & time ; 08/05/2024 00:41:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; sdcard              ;
 +-------------------+---------------------+
@@ -75,15 +75,19 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 127913722665915.172173555011984 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 127913722665915.172281131411936 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; LPM_COUNTER                     ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_CLSHIFT                     ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                            ; --            ; --          ; --             ;
 ; IP_TOOL_VERSION                     ; 13.1                            ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --             ;
 ; MISC_FILE                           ; mycounter.bsf                   ; --            ; --          ; --             ;
 ; MISC_FILE                           ; mycounter.cmp                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; shift48bit.bsf                  ; --            ; --          ; --             ;
+; MISC_FILE                           ; shift48bit.cmp                  ; --            ; --          ; --             ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                            ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top            ;
@@ -97,12 +101,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4664 MB             ; 00:00:00                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 4959 MB             ; 00:00:02                           ;
-; Assembler                 ; 00:00:00     ; 1.0                     ; 4579 MB             ; 00:00:00                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4622 MB             ; 00:00:00                           ;
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4668 MB             ; 00:00:00                           ;
+; Fitter                    ; 00:00:03     ; 1.0                     ; 4967 MB             ; 00:00:02                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4573 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4618 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4530 MB             ; 00:00:00                           ;
-; Total                     ; 00:00:05     ; --                      ; --                  ; 00:00:02                           ;
+; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:03                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

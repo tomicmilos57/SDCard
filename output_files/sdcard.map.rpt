@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sdcard
-Tue Jul 23 13:52:31 2024
+Mon Aug 05 00:41:55 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -14,10 +14,23 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component
+ 13. Parameter Settings for User Entity Instance: sendcmd:inst3|ComparatorX:inst10
+ 14. Parameter Settings for User Entity Instance: sendcmd:inst3|RegisterX:inst9
+ 15. Parameter Settings for User Entity Instance: sendcmd:inst3|RegisterX:inst
+ 16. Parameter Settings for User Entity Instance: sendcmd:inst3|MultiplexerX:inst1
+ 17. Parameter Settings for User Entity Instance: sendcmd:inst3|shift48bit:inst2|lpm_clshift:LPM_CLSHIFT_component
+ 18. Parameter Settings for User Entity Instance: ComparatorX:inst7
+ 19. Parameter Settings for User Entity Instance: RegisterX:inst5
+ 20. Parameter Settings for User Entity Instance: ConstantX:inst12
+ 21. Parameter Settings for User Entity Instance: MultiplexerX:inst11
+ 22. Parameter Settings for User Entity Instance: ComparatorX:inst6
+ 23. Parameter Settings for User Entity Instance: RegisterX:inst14
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +56,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 23 13:52:31 2024      ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 05 00:41:55 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; sdcard                                     ;
 ; Top-level Entity Name              ; sdcard                                     ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 19                                         ;
-;     Total combinational functions  ; 19                                         ;
-;     Dedicated logic registers      ; 19                                         ;
-; Total registers                    ; 19                                         ;
-; Total pins                         ; 11                                         ;
+; Total logic elements               ; 71                                         ;
+;     Total combinational functions  ; 71                                         ;
+;     Dedicated logic registers      ; 64                                         ;
+; Total registers                    ; 64                                         ;
+; Total pins                         ; 16                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -163,9 +176,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                           ; Library ;
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+---------+
-; sdcard.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Milos/Desktop/sdcard/sdcard.bdf                               ;         ;
-; myclockdivider.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Milos/Desktop/sdcard/myclockdivider.bdf                       ;         ;
-; mycounter.vhd                    ; yes             ; User Wizard-Generated File         ; C:/Users/Milos/Desktop/sdcard/mycounter.vhd                            ;         ;
+; sdcard.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Milos/Desktop/SDCard/sdcard.bdf                               ;         ;
+; myclockdivider.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Milos/Desktop/SDCard/myclockdivider.bdf                       ;         ;
+; mycounter.vhd                    ; yes             ; User Wizard-Generated File         ; C:/Users/Milos/Desktop/SDCard/mycounter.vhd                            ;         ;
+; shift48bit.vhd                   ; yes             ; User Wizard-Generated File         ; C:/Users/Milos/Desktop/SDCard/shift48bit.vhd                           ;         ;
+; sendcmd.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Milos/Desktop/SDCard/sendcmd.bdf                              ;         ;
 ; lpm_counter.tdf                  ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_counter.tdf         ;         ;
 ; lpm_constant.inc                 ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
 ; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
@@ -176,38 +191,44 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; dffeea.inc                       ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/megafunctions/dffeea.inc              ;         ;
 ; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
 ; aglobal131.inc                   ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc          ;         ;
-; db/cntr_nph.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/Milos/Desktop/sdcard/db/cntr_nph.tdf                          ;         ;
+; db/cntr_nph.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/Milos/Desktop/SDCard/db/cntr_nph.tdf                          ;         ;
+; comparatorx.vhd                  ; yes             ; Auto-Found VHDL File               ; C:/Users/Milos/Desktop/SDCard/comparatorx.vhd                          ;         ;
+; registerx.vhd                    ; yes             ; Auto-Found VHDL File               ; C:/Users/Milos/Desktop/SDCard/registerx.vhd                            ;         ;
+; multiplexerx.vhd                 ; yes             ; Auto-Found VHDL File               ; C:/Users/Milos/Desktop/SDCard/multiplexerx.vhd                         ;         ;
+; lpm_clshift.tdf                  ; yes             ; Megafunction                       ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_clshift.tdf         ;         ;
+; db/lpm_clshift_7kc.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Milos/Desktop/SDCard/db/lpm_clshift_7kc.tdf                   ;         ;
+; constantx.vhd                    ; yes             ; Auto-Found VHDL File               ; C:/Users/Milos/Desktop/SDCard/constantx.vhd                            ;         ;
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 19           ;
-;                                             ;              ;
-; Total combinational functions               ; 19           ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 0            ;
-;     -- 3 input functions                    ; 0            ;
-;     -- <=2 input functions                  ; 19           ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 1            ;
-;     -- arithmetic mode                      ; 18           ;
-;                                             ;              ;
-; Total registers                             ; 19           ;
-;     -- Dedicated logic registers            ; 19           ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 11           ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-; Maximum fan-out node                        ; clk_50~input ;
-; Maximum fan-out                             ; 20           ;
-; Total fan-out                               ; 88           ;
-; Average fan-out                             ; 1.47         ;
-+---------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                       ;
++---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                               ;
++---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 71                                                                                                                  ;
+;                                             ;                                                                                                                     ;
+; Total combinational functions               ; 71                                                                                                                  ;
+; Logic element usage by number of LUT inputs ;                                                                                                                     ;
+;     -- 4 input functions                    ; 5                                                                                                                   ;
+;     -- 3 input functions                    ; 6                                                                                                                   ;
+;     -- <=2 input functions                  ; 60                                                                                                                  ;
+;                                             ;                                                                                                                     ;
+; Logic elements by mode                      ;                                                                                                                     ;
+;     -- normal mode                          ; 43                                                                                                                  ;
+;     -- arithmetic mode                      ; 28                                                                                                                  ;
+;                                             ;                                                                                                                     ;
+; Total registers                             ; 64                                                                                                                  ;
+;     -- Dedicated logic registers            ; 64                                                                                                                  ;
+;     -- I/O registers                        ; 0                                                                                                                   ;
+;                                             ;                                                                                                                     ;
+; I/O pins                                    ; 16                                                                                                                  ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                                                   ;
+; Maximum fan-out node                        ; myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component|cntr_nph:auto_generated|counter_reg_bit[18] ;
+; Maximum fan-out                             ; 47                                                                                                                  ;
+; Total fan-out                               ; 317                                                                                                                 ;
+; Average fan-out                             ; 1.86                                                                                                                ;
++---------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,22 +236,57 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
-; |sdcard                                      ; 19 (0)            ; 19 (0)       ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |sdcard                                                                                                 ; work         ;
+; |sdcard                                      ; 71 (0)            ; 64 (0)       ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |sdcard                                                                                                 ; work         ;
+;    |ComparatorX:inst7|                       ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|ComparatorX:inst7                                                                               ; work         ;
+;    |MultiplexerX:inst11|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|MultiplexerX:inst11                                                                             ; work         ;
+;    |RegisterX:inst5|                         ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|RegisterX:inst5                                                                                 ; work         ;
 ;    |myclockdivider:inst123|                  ; 19 (0)            ; 19 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|myclockdivider:inst123                                                                          ; work         ;
 ;       |mycounter:inst|                       ; 19 (0)            ; 19 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|myclockdivider:inst123|mycounter:inst                                                           ; work         ;
 ;          |lpm_counter:LPM_COUNTER_component| ; 19 (0)            ; 19 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component                         ; work         ;
 ;             |cntr_nph:auto_generated|        ; 19 (19)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component|cntr_nph:auto_generated ; work         ;
+;    |sendcmd:inst3|                           ; 39 (1)            ; 38 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|sendcmd:inst3                                                                                   ; work         ;
+;       |ComparatorX:inst10|                   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|sendcmd:inst3|ComparatorX:inst10                                                                ; work         ;
+;       |MultiplexerX:inst1|                   ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|sendcmd:inst3|MultiplexerX:inst1                                                                ; work         ;
+;       |RegisterX:inst9|                      ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|sendcmd:inst3|RegisterX:inst9                                                                   ; work         ;
+;       |RegisterX:inst|                       ; 0 (0)             ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sdcard|sendcmd:inst3|RegisterX:inst                                                                    ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                       ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------------------+---------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                               ; IP Include File                             ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------------------+---------------------------------------------+
-; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |sdcard|myclockdivider:inst123|mycounter:inst ; C:/Users/Milos/Desktop/sdcard/mycounter.vhd ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------------------+---------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                        ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+----------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                               ; IP Include File                              ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+----------------------------------------------+
+; Altera ; LPM_CLSHIFT  ; 13.1    ; N/A          ; N/A          ; |sdcard|sendcmd:inst3|shift48bit:inst2        ; C:/Users/Milos/Desktop/SDCard/shift48bit.vhd ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |sdcard|myclockdivider:inst123|mycounter:inst ; C:/Users/Milos/Desktop/SDCard/mycounter.vhd  ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++-------------------------------------------+----------------------------------------+
+; Register name                             ; Reason for Removal                     ;
++-------------------------------------------+----------------------------------------+
+; sendcmd:inst3|RegisterX:inst|data[31..47] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 17    ;                                        ;
++-------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                       ;
++---------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                                        ;
++---------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; sendcmd:inst3|RegisterX:inst|data[47] ; Stuck at GND              ; sendcmd:inst3|RegisterX:inst|data[46], sendcmd:inst3|RegisterX:inst|data[45], ;
+;                                       ; due to stuck port data_in ; sendcmd:inst3|RegisterX:inst|data[44], sendcmd:inst3|RegisterX:inst|data[43], ;
+;                                       ;                           ; sendcmd:inst3|RegisterX:inst|data[42], sendcmd:inst3|RegisterX:inst|data[41], ;
+;                                       ;                           ; sendcmd:inst3|RegisterX:inst|data[40], sendcmd:inst3|RegisterX:inst|data[39], ;
+;                                       ;                           ; sendcmd:inst3|RegisterX:inst|data[38], sendcmd:inst3|RegisterX:inst|data[37], ;
+;                                       ;                           ; sendcmd:inst3|RegisterX:inst|data[36], sendcmd:inst3|RegisterX:inst|data[35], ;
+;                                       ;                           ; sendcmd:inst3|RegisterX:inst|data[34], sendcmd:inst3|RegisterX:inst|data[33], ;
+;                                       ;                           ; sendcmd:inst3|RegisterX:inst|data[32], sendcmd:inst3|RegisterX:inst|data[31]  ;
++---------------------------------------+---------------------------+-------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -238,12 +294,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 19    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 64    ;
+; Number of registers using Synchronous Clear  ; 6     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 6     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -275,6 +331,125 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sendcmd:inst3|ComparatorX:inst10 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; size           ; 6     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sendcmd:inst3|RegisterX:inst9 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; size           ; 6     ; Signed Integer                                    ;
+; default_value  ; 0     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sendcmd:inst3|RegisterX:inst ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; size           ; 48    ; Signed Integer                                   ;
+; default_value  ; 0     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sendcmd:inst3|MultiplexerX:inst1 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; size           ; 48    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sendcmd:inst3|shift48bit:inst2|lpm_clshift:LPM_CLSHIFT_component ;
++----------------+-----------------+----------------------------------------------------------------------------+
+; Parameter Name ; Value           ; Type                                                                       ;
++----------------+-----------------+----------------------------------------------------------------------------+
+; LPM_PIPELINE   ; 0               ; Untyped                                                                    ;
+; LPM_SHIFTTYPE  ; LOGICAL         ; Untyped                                                                    ;
+; LPM_WIDTH      ; 48              ; Signed Integer                                                             ;
+; LPM_WIDTHDIST  ; 6               ; Signed Integer                                                             ;
+; CBXI_PARAMETER ; lpm_clshift_7kc ; Untyped                                                                    ;
++----------------+-----------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ComparatorX:inst7 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; size           ; 7     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegisterX:inst5 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; size           ; 7     ; Signed Integer                      ;
+; default_value  ; 0     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ConstantX:inst12 ;
++----------------+----------------+-----------------------------+
+; Parameter Name ; Value          ; Type                        ;
++----------------+----------------+-----------------------------+
+; size           ; 48             ; Signed Integer              ;
+; const          ; 70368744177813 ; Signed Integer              ;
++----------------+----------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MultiplexerX:inst11 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; size           ; 1     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ComparatorX:inst6 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; size           ; 7     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegisterX:inst14 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; size           ; 3     ; Signed Integer                       ;
+; default_value  ; 0     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -290,7 +465,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jul 23 13:52:30 2024
+    Info: Processing started: Mon Aug 05 00:41:54 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sdcard -c sdcard
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file sdcard.bdf
@@ -300,13 +475,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file myclock
 Info (12021): Found 2 design units, including 1 entities, in source file mycounter.vhd
     Info (12022): Found design unit 1: mycounter-SYN
     Info (12023): Found entity 1: mycounter
+Info (12021): Found 2 design units, including 1 entities, in source file shift48bit.vhd
+    Info (12022): Found design unit 1: shift48bit-SYN
+    Info (12023): Found entity 1: shift48bit
+Info (12021): Found 1 design units, including 1 entities, in source file sendcmd.bdf
+    Info (12023): Found entity 1: sendcmd
 Info (12127): Elaborating entity "sdcard" for the top level hierarchy
+Warning (275043): Pin "led0" is missing source
+Warning (275043): Pin "led1" is missing source
+Warning (275043): Pin "led2" is missing source
+Warning (275043): Pin "led3" is missing source
 Warning (275043): Pin "led4" is missing source
 Warning (275043): Pin "led5" is missing source
 Warning (275043): Pin "led6" is missing source
 Warning (275043): Pin "led7" is missing source
 Warning (275043): Pin "led8" is missing source
 Warning (275043): Pin "led9" is missing source
+Warning (275043): Pin "WPnot" is missing source
+Warning (275008): Primitive "SRFF" of instance "inst15" not used
 Info (12128): Elaborating entity "myclockdivider" for hierarchy "myclockdivider:inst123"
 Info (12128): Elaborating entity "mycounter" for hierarchy "myclockdivider:inst123|mycounter:inst"
 Info (12128): Elaborating entity "lpm_counter" for hierarchy "myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component"
@@ -319,25 +505,72 @@ Info (12133): Instantiated megafunction "myclockdivider:inst123|mycounter:inst|l
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_nph.tdf
     Info (12023): Found entity 1: cntr_nph
 Info (12128): Elaborating entity "cntr_nph" for hierarchy "myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component|cntr_nph:auto_generated"
+Info (12128): Elaborating entity "sendcmd" for hierarchy "sendcmd:inst3"
+Warning (275080): Converted elements in bus name "out" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "out[47..0]" to "out47..0"
+Warning (12125): Using design file comparatorx.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: ComparatorX-rtl
+    Info (12023): Found entity 1: ComparatorX
+Info (12128): Elaborating entity "ComparatorX" for hierarchy "sendcmd:inst3|ComparatorX:inst10"
+Warning (12125): Using design file registerx.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: RegisterX-rtl
+    Info (12023): Found entity 1: RegisterX
+Info (12128): Elaborating entity "RegisterX" for hierarchy "sendcmd:inst3|RegisterX:inst9"
+Info (12128): Elaborating entity "RegisterX" for hierarchy "sendcmd:inst3|RegisterX:inst"
+Warning (12125): Using design file multiplexerx.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: MultiplexerX-rtl
+    Info (12023): Found entity 1: MultiplexerX
+Info (12128): Elaborating entity "MultiplexerX" for hierarchy "sendcmd:inst3|MultiplexerX:inst1"
+Info (12128): Elaborating entity "shift48bit" for hierarchy "sendcmd:inst3|shift48bit:inst2"
+Info (12128): Elaborating entity "lpm_clshift" for hierarchy "sendcmd:inst3|shift48bit:inst2|lpm_clshift:LPM_CLSHIFT_component"
+Info (12130): Elaborated megafunction instantiation "sendcmd:inst3|shift48bit:inst2|lpm_clshift:LPM_CLSHIFT_component"
+Info (12133): Instantiated megafunction "sendcmd:inst3|shift48bit:inst2|lpm_clshift:LPM_CLSHIFT_component" with the following parameter:
+    Info (12134): Parameter "lpm_shifttype" = "LOGICAL"
+    Info (12134): Parameter "lpm_type" = "LPM_CLSHIFT"
+    Info (12134): Parameter "lpm_width" = "48"
+    Info (12134): Parameter "lpm_widthdist" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_clshift_7kc.tdf
+    Info (12023): Found entity 1: lpm_clshift_7kc
+Info (12128): Elaborating entity "lpm_clshift_7kc" for hierarchy "sendcmd:inst3|shift48bit:inst2|lpm_clshift:LPM_CLSHIFT_component|lpm_clshift_7kc:auto_generated"
+Info (12128): Elaborating entity "ComparatorX" for hierarchy "ComparatorX:inst7"
+Info (12128): Elaborating entity "RegisterX" for hierarchy "RegisterX:inst5"
+Warning (12125): Using design file constantx.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: ConstantX-rtl
+    Info (12023): Found entity 1: ConstantX
+Info (12128): Elaborating entity "ConstantX" for hierarchy "ConstantX:inst12"
+Info (12128): Elaborating entity "MultiplexerX" for hierarchy "MultiplexerX:inst11"
+Info (12128): Elaborating entity "RegisterX" for hierarchy "RegisterX:inst14"
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "CMD/OUT" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "DAT3/SSnot" and its non-tri-state driver.
+Warning (13039): The following bidir pins have no drivers
+    Warning (13040): Bidir "DAT0/IN" has no driver
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "CMD/OUT~synth"
+    Warning (13010): Node "DAT3/SSnot~synth"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "led1" is stuck at VCC
+    Warning (13410): Pin "led0" is stuck at GND
+    Warning (13410): Pin "led1" is stuck at GND
     Warning (13410): Pin "led2" is stuck at GND
+    Warning (13410): Pin "led3" is stuck at GND
     Warning (13410): Pin "led4" is stuck at GND
     Warning (13410): Pin "led5" is stuck at GND
     Warning (13410): Pin "led6" is stuck at GND
     Warning (13410): Pin "led7" is stuck at GND
     Warning (13410): Pin "led8" is stuck at GND
     Warning (13410): Pin "led9" is stuck at GND
+    Warning (13410): Pin "WPnot" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 30 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 19 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4672 megabytes
-    Info: Processing ended: Tue Jul 23 13:52:31 2024
+    Info (21059): Implemented 12 output pins
+    Info (21060): Implemented 3 bidirectional pins
+    Info (21061): Implemented 72 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4676 megabytes
+    Info: Processing ended: Mon Aug 05 00:41:55 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

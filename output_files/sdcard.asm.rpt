@@ -1,5 +1,5 @@
 Assembler report for sdcard
-Tue Jul 23 13:52:36 2024
+Mon Aug 05 00:42:01 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/Milos/Desktop/sdcard/output_files/sdcard.sof
+  5. Assembler Device Options: C:/Users/Milos/Desktop/SDCard/output_files/sdcard.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jul 23 13:52:36 2024 ;
+; Assembler Status      ; Successful - Mon Aug 05 00:42:01 2024 ;
 ; Revision Name         ; sdcard                                ;
 ; Top-level Entity Name ; sdcard                                ;
 ; Family                ; Cyclone III                           ;
@@ -82,18 +82,18 @@ applicable agreement for further details.
 +-------------------------------------------------------+
 ; File Name                                             ;
 +-------------------------------------------------------+
-; C:/Users/Milos/Desktop/sdcard/output_files/sdcard.sof ;
+; C:/Users/Milos/Desktop/SDCard/output_files/sdcard.sof ;
 +-------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Milos/Desktop/sdcard/output_files/sdcard.sof ;
+; Assembler Device Options: C:/Users/Milos/Desktop/SDCard/output_files/sdcard.sof ;
 +----------------+----------------------------------------------------------------+
 ; Option         ; Setting                                                        ;
 +----------------+----------------------------------------------------------------+
 ; Device         ; EP3C16F484C6                                                   ;
-; JTAG usercode  ; 0x000CA08A                                                     ;
-; Checksum       ; 0x000CA08A                                                     ;
+; JTAG usercode  ; 0x000D18DC                                                     ;
+; Checksum       ; 0x000D18DC                                                     ;
 +----------------+----------------------------------------------------------------+
 
 
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jul 23 13:52:36 2024
+    Info: Processing started: Mon Aug 05 00:42:00 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off sdcard -c sdcard
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4579 megabytes
-    Info: Processing ended: Tue Jul 23 13:52:36 2024
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 4573 megabytes
+    Info: Processing ended: Mon Aug 05 00:42:01 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
