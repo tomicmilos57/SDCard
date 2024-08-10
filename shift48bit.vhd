@@ -43,6 +43,7 @@ ENTITY shift48bit IS
 	PORT
 	(
 		data		: IN STD_LOGIC_VECTOR (47 DOWNTO 0);
+		direction		: IN STD_LOGIC ;
 		distance		: IN STD_LOGIC_VECTOR (5 DOWNTO 0);
 		result		: OUT STD_LOGIC_VECTOR (47 DOWNTO 0)
 	);
@@ -52,7 +53,6 @@ END shift48bit;
 ARCHITECTURE SYN OF shift48bit IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (47 DOWNTO 0);
-	SIGNAL sub_wire1	: STD_LOGIC ;
 
 
 
@@ -72,7 +72,6 @@ ARCHITECTURE SYN OF shift48bit IS
 	END COMPONENT;
 
 BEGIN
-	sub_wire1    <= '1';
 	result    <= sub_wire0(47 DOWNTO 0);
 
 	LPM_CLSHIFT_component : LPM_CLSHIFT
@@ -84,7 +83,7 @@ BEGIN
 	)
 	PORT MAP (
 		data => data,
-		direction => sub_wire1,
+		direction => direction,
 		distance => distance,
 		result => sub_wire0
 	);
@@ -103,21 +102,22 @@ END SYN;
 -- Retrieval info: PRIVATE: lpm_widthdist NUMERIC "6"
 -- Retrieval info: PRIVATE: lpm_widthdist_style NUMERIC "0"
 -- Retrieval info: PRIVATE: new_diagram STRING "1"
--- Retrieval info: PRIVATE: port_direction NUMERIC "1"
+-- Retrieval info: PRIVATE: port_direction NUMERIC "2"
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 -- Retrieval info: CONSTANT: LPM_SHIFTTYPE STRING "LOGICAL"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_CLSHIFT"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "48"
 -- Retrieval info: CONSTANT: LPM_WIDTHDIST NUMERIC "6"
 -- Retrieval info: USED_PORT: data 0 0 48 0 INPUT NODEFVAL "data[47..0]"
+-- Retrieval info: USED_PORT: direction 0 0 0 0 INPUT NODEFVAL "direction"
 -- Retrieval info: USED_PORT: distance 0 0 6 0 INPUT NODEFVAL "distance[5..0]"
 -- Retrieval info: USED_PORT: result 0 0 48 0 OUTPUT NODEFVAL "result[47..0]"
 -- Retrieval info: CONNECT: @data 0 0 48 0 data 0 0 48 0
--- Retrieval info: CONNECT: @direction 0 0 0 0 VCC 0 0 0 0
+-- Retrieval info: CONNECT: @direction 0 0 0 0 direction 0 0 0 0
 -- Retrieval info: CONNECT: @distance 0 0 6 0 distance 0 0 6 0
 -- Retrieval info: CONNECT: result 0 0 48 0 @result 0 0 48 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL shift48bit.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL shift48bit.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL shift48bit.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL shift48bit.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL shift48bit.bsf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL shift48bit_inst.vhd FALSE

@@ -47,8 +47,8 @@ applicable agreement for further details.
 	(port
 		(pt 184 32)
 		(output)
-		(text "out0" (rect 0 0 24 14)(font "Arial" (font_size 8)))
-		(text "out0" (rect 139 27 163 41)(font "Arial" (font_size 8)))
+		(text "output" (rect 0 0 35 14)(font "Arial" (font_size 8)))
+		(text "output" (rect 128 27 163 41)(font "Arial" (font_size 8)))
 		(line (pt 184 32)(pt 168 32))
 	)
 	(port

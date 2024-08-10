@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="sdcard">
-		<CBX_INST_ENTRY INSTANCE_NAME="|sdcard|myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_nph.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sdcard|delay:inst27|myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_nph.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|sdcard|sendcmd:inst3|shift48bit:inst2|lpm_clshift:LPM_CLSHIFT_component" CBX_FILE_NAME="lpm_clshift_7kc.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
