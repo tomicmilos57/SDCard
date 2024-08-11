@@ -45,6 +45,13 @@ applicable agreement for further details.
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port
+		(pt 0 80)
+		(input)
+		(text "initialized" (rect 0 0 50 14)(font "Arial" (font_size 8)))
+		(text "initialized" (rect 21 75 71 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
 		(pt 184 32)
 		(output)
 		(text "output" (rect 0 0 35 14)(font "Arial" (font_size 8)))

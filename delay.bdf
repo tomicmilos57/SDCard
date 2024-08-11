@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 120 216 288 232)
+	(rect 456 216 624 232)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "clkin" (rect 5 0 27 12)(font "Arial" ))
 	(pt 168 8)
@@ -69,22 +69,6 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1264 368 1440 384)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "clkout" (rect 90 0 119 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
-(pin
-	(output)
 	(rect 1264 336 1440 352)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "CMD" (rect 90 0 114 12)(font "Arial" ))
@@ -99,8 +83,24 @@ applicable agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 )
+(pin
+	(output)
+	(rect 1264 408 1440 424)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "finished" (rect 90 0 128 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
 (symbol
-	(rect 336 336 368 352)
+	(rect 552 264 584 280)
 	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
 	(text "inst" (rect 3 5 20 17)(font "Arial" )(invisible))
 	(port
@@ -115,7 +115,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 336 440 368 472)
+	(rect 552 368 584 400)
 	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
 	(text "inst1" (rect 3 21 26 33)(font "Arial" )(invisible))
 	(port
@@ -275,75 +275,6 @@ applicable agreement for further details.
 	)
 	(flipy)
 )
-(symbol
-	(rect 1088 352 1152 400)
-	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
-	(text "inst25" (rect 3 37 32 49)(font "Arial" ))
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
-		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 14 16))
-	)
-	(port
-		(pt 0 32)
-		(input)
-		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
-		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
-		(line (pt 0 32)(pt 14 32))
-	)
-	(port
-		(pt 64 24)
-		(output)
-		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
-		(line (pt 42 24)(pt 64 24))
-	)
-	(drawing
-		(line (pt 14 12)(pt 30 12))
-		(line (pt 14 37)(pt 31 37))
-		(line (pt 14 12)(pt 14 37))
-		(arc (pt 31 37)(pt 30 12)(rect 18 12 43 37))
-	)
-)
-(symbol
-	(rect 368 56 504 152)
-	(text "myclockdivider" (rect 5 0 88 14)(font "Arial" (font_size 8)))
-	(text "inst123" (rect 8 80 43 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "INCLK" (rect 0 0 34 14)(font "Arial" (font_size 8)))
-		(text "INCLK" (rect 21 27 55 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 136 32)
-		(output)
-		(text "OUTCLK" (rect 0 0 48 14)(font "Arial" (font_size 8)))
-		(text "OUTCLK" (rect 67 27 115 41)(font "Arial" (font_size 8)))
-		(line (pt 136 32)(pt 120 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 120 80))
-	)
-)
-(connector
-	(text "0" (rect 336 419 348 424)(font "Arial" )(vertical))
-	(pt 352 440)
-	(pt 352 424)
-)
-(connector
-	(text "1" (rect 336 355 348 360)(font "Arial" )(vertical))
-	(pt 352 352)
-	(pt 352 376)
-)
-(connector
-	(text "clkms" (rect 592 208 621 220)(font "Arial" ))
-	(pt 648 224)
-	(pt 584 224)
-)
 (connector
 	(pt 760 280)
 	(pt 760 368)
@@ -359,30 +290,12 @@ applicable agreement for further details.
 	(pt 936 232)
 )
 (connector
-	(pt 1016 368)
-	(pt 1016 232)
-)
-(connector
-	(text "clkms" (rect 1040 368 1069 380)(font "Arial" ))
-	(pt 1088 384)
-	(pt 1032 384)
-)
-(connector
-	(pt 1016 368)
-	(pt 1088 368)
-)
-(connector
 	(pt 944 368)
 	(pt 1016 368)
 )
 (connector
 	(pt 984 232)
 	(pt 1016 232)
-)
-(connector
-	(text "<<__$DEF_ALIAS2620>>" (rect 1160 360 1283 372)(font "Arial" )(invisible))
-	(pt 1152 376)
-	(pt 1264 376)
 )
 (connector
 	(text "on" (rect 952 368 963 380)(font "Arial" ))
@@ -400,20 +313,41 @@ applicable agreement for further details.
 	(pt 1232 344)
 )
 (connector
-	(text "1,1,1,1,1,1,1,1,1" (rect 504 448 585 460)(font "Arial" ))
-	(pt 624 464)
-	(pt 496 464)
+	(pt 648 224)
+	(pt 624 224)
+)
+(connector
+	(text "0" (rect 552 347 564 352)(font "Arial" )(vertical))
+	(pt 568 368)
+	(pt 568 352)
+)
+(connector
+	(text "1" (rect 552 283 564 288)(font "Arial" )(vertical))
+	(pt 568 280)
+	(pt 568 304)
+)
+(connector
+	(pt 1016 232)
+	(pt 1016 368)
+)
+(connector
+	(pt 1016 368)
+	(pt 1016 416)
+)
+(connector
+	(pt 1016 416)
+	(pt 1264 416)
+)
+(connector
+	(text "0,0,0,0,0,0,0,1,1" (rect 648 504 729 516)(font "Arial" ))
+	(pt 768 520)
+	(pt 640 520)
 	(bus)
 )
 (connector
-	(text "0,0,0,0,0,0,0,1,1" (rect 664 368 745 380)(font "Arial" ))
+	(text "1,1,1,1,1,1,1,1,1" (rect 664 368 745 380)(font "Arial" ))
 	(pt 784 384)
 	(pt 656 384)
 	(bus)
-)
-(connector
-	(text "clkms" (rect 352 208 381 220)(font "Arial" ))
-	(pt 288 224)
-	(pt 392 224)
 )
 (junction (pt 1016 368))
