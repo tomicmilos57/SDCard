@@ -1,26 +1,18 @@
 |sdcard
-led0 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
-clk_50 => myclockdivider:inst123.INCLK
+led0 <= dap[0].DB_MAX_OUTPUT_PORT_TYPE
+clk_50 => mycounter2:inst5.INCLK
 clk_50 => InstantRisingEdge:inst16.CLK
-led1 <= onsync.DB_MAX_OUTPUT_PORT_TYPE
-led2 <= ondelay.DB_MAX_OUTPUT_PORT_TYPE
-led3 <= sending.DB_MAX_OUTPUT_PORT_TYPE
-led4 <= out.DB_MAX_OUTPUT_PORT_TYPE
-CMD/OUT <> inst37
-CMD/OUT <> inst36
-CMD/OUT <> inst38
-CMD/OUT <> inst9
-led5 <= cs.DB_MAX_OUTPUT_PORT_TYPE
-DAT3/SSnot <> inst32
-DAT3/SSnot <> inst31
-DAT3/SSnot <> inst30
-DAT3/SSnot <> inst10
-led6 <= finsync.DB_MAX_OUTPUT_PORT_TYPE
-led7 <= findelay.DB_MAX_OUTPUT_PORT_TYPE
+led1 <= dap[1].DB_MAX_OUTPUT_PORT_TYPE
+led2 <= dap[2].DB_MAX_OUTPUT_PORT_TYPE
+led3 <= dap[3].DB_MAX_OUTPUT_PORT_TYPE
+led4 <= dap[4].DB_MAX_OUTPUT_PORT_TYPE
+led5 <= dap[5].DB_MAX_OUTPUT_PORT_TYPE
+led6 <= dap[6].DB_MAX_OUTPUT_PORT_TYPE
+led7 <= dap[7].DB_MAX_OUTPUT_PORT_TYPE
 led8 <= SDclk.DB_MAX_OUTPUT_PORT_TYPE
 led9 <= DAT0/IN.DB_MAX_OUTPUT_PORT_TYPE
 CLK_SD <= SDclk.DB_MAX_OUTPUT_PORT_TYPE
-WPnot <= <GND>
+WPnot <= <VCC>
 hex00 <= Print:inst22.hex00
 BUTTON2 => inst116.IN0
 hex01 <= Print:inst22.hex01
@@ -50,78 +42,53 @@ hex33 <= Print:inst22.hex33
 hex34 <= Print:inst22.hex34
 hex35 <= Print:inst22.hex35
 hex36 <= Print:inst22.hex36
+CMD/OUT <> inst37
+CMD/OUT <> inst36
+CMD/OUT <> inst38
+CMD/OUT <> inst9
+DAT3/SSnot <> inst32
+DAT3/SSnot <> inst31
+DAT3/SSnot <> inst30
+DAT3/SSnot <> inst10
 BUTTON1 => inst115.IN0
 
 
-|sdcard|delay:inst27
-on <= ComparatorX:inst21.LS
-clkin => RegisterX:inst13.CLK
-CS <= <GND>
-CMD <= <GND>
-finished <= ComparatorX:inst21.EQ
+|sdcard|waitforresponse:inst14
+DAP[0] <= RegisterX:inst47.DATA_OUT[0]
+DAP[1] <= RegisterX:inst47.DATA_OUT[1]
+DAP[2] <= RegisterX:inst47.DATA_OUT[2]
+DAP[3] <= RegisterX:inst47.DATA_OUT[3]
+DAP[4] <= RegisterX:inst47.DATA_OUT[4]
+DAP[5] <= RegisterX:inst47.DATA_OUT[5]
+DAP[6] <= RegisterX:inst47.DATA_OUT[6]
+DAP[7] <= RegisterX:inst47.DATA_OUT[7]
+clk => RegisterX:inst47.CLK
+clk => inst32.CLK
+clk => inst31.CLK
+clk => inst30.CLK
+clk => inst29.CLK
+clk => inst28.CLK
+clk => inst27.CLK
+clk => inst26.CLK
+clk => inst25.CLK
+clk => inst42.CLK
+clk => inst2.CLK
+clk => RisingEdge:inst39.CLK
+clk => inst15.CLK
+clk => inst16.CLK
+clk => inst17.CLK
+clk => inst19.CLK
+clk => inst20.CLK
+clk => inst21.CLK
+clk => inst22.CLK
+clk => inst23.CLK
+q => inst38.IN0
+q => inst42.DATAIN
+q => inst15.DATAIN
+startListening => inst2.IN1
 
 
-|sdcard|delay:inst27|ComparatorX:inst21
-A[0] => Equal0.IN8
-A[0] => LessThan0.IN9
-A[0] => LessThan1.IN9
-A[1] => Equal0.IN7
-A[1] => LessThan0.IN8
-A[1] => LessThan1.IN8
-A[2] => Equal0.IN6
-A[2] => LessThan0.IN7
-A[2] => LessThan1.IN7
-A[3] => Equal0.IN5
-A[3] => LessThan0.IN6
-A[3] => LessThan1.IN6
-A[4] => Equal0.IN4
-A[4] => LessThan0.IN5
-A[4] => LessThan1.IN5
-A[5] => Equal0.IN3
-A[5] => LessThan0.IN4
-A[5] => LessThan1.IN4
-A[6] => Equal0.IN2
-A[6] => LessThan0.IN3
-A[6] => LessThan1.IN3
-A[7] => Equal0.IN1
-A[7] => LessThan0.IN2
-A[7] => LessThan1.IN2
-A[8] => Equal0.IN0
-A[8] => LessThan0.IN1
-A[8] => LessThan1.IN1
-B[0] => Equal0.IN17
-B[0] => LessThan0.IN18
-B[0] => LessThan1.IN18
-B[1] => Equal0.IN16
-B[1] => LessThan0.IN17
-B[1] => LessThan1.IN17
-B[2] => Equal0.IN15
-B[2] => LessThan0.IN16
-B[2] => LessThan1.IN16
-B[3] => Equal0.IN14
-B[3] => LessThan0.IN15
-B[3] => LessThan1.IN15
-B[4] => Equal0.IN13
-B[4] => LessThan0.IN14
-B[4] => LessThan1.IN14
-B[5] => Equal0.IN12
-B[5] => LessThan0.IN13
-B[5] => LessThan1.IN13
-B[6] => Equal0.IN11
-B[6] => LessThan0.IN12
-B[6] => LessThan1.IN12
-B[7] => Equal0.IN10
-B[7] => LessThan0.IN11
-B[7] => LessThan1.IN11
-B[8] => Equal0.IN9
-B[8] => LessThan0.IN10
-B[8] => LessThan1.IN10
-EQ <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
-LS <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
-GR <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|sdcard|delay:inst27|RegisterX:inst13
+|sdcard|waitforresponse:inst14|RegisterX:inst47
 CLK => data[0].CLK
 CLK => data[1].CLK
 CLK => data[2].CLK
@@ -130,7 +97,6 @@ CLK => data[4].CLK
 CLK => data[5].CLK
 CLK => data[6].CLK
 CLK => data[7].CLK
-CLK => data[8].CLK
 LD => data_next.OUTPUTSELECT
 LD => data_next.OUTPUTSELECT
 LD => data_next.OUTPUTSELECT
@@ -139,8 +105,6 @@ LD => data_next.OUTPUTSELECT
 LD => data_next.OUTPUTSELECT
 LD => data_next.OUTPUTSELECT
 LD => data_next.OUTPUTSELECT
-LD => data_next.OUTPUTSELECT
-CL => data_next[8].OUTPUTSELECT
 CL => data_next[7].OUTPUTSELECT
 CL => data_next[6].OUTPUTSELECT
 CL => data_next[5].OUTPUTSELECT
@@ -157,8 +121,6 @@ INC => data_next.OUTPUTSELECT
 INC => data_next.OUTPUTSELECT
 INC => data_next.OUTPUTSELECT
 INC => data_next.OUTPUTSELECT
-INC => data_next.OUTPUTSELECT
-DEC => data_next.OUTPUTSELECT
 DEC => data_next.OUTPUTSELECT
 DEC => data_next.OUTPUTSELECT
 DEC => data_next.OUTPUTSELECT
@@ -175,7 +137,6 @@ DATA_IN[4] => data_next.DATAB
 DATA_IN[5] => data_next.DATAB
 DATA_IN[6] => data_next.DATAB
 DATA_IN[7] => data_next.DATAB
-DATA_IN[8] => data_next.DATAB
 DATA_OUT[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -184,147 +145,20 @@ DATA_OUT[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[5] <= data[5].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[6] <= data[6].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[7] <= data[7].DB_MAX_OUTPUT_PORT_TYPE
-DATA_OUT[8] <= data[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sdcard|myclockdivider:inst123
-OUTCLK <= q[18].DB_MAX_OUTPUT_PORT_TYPE
-INCLK => mycounter:inst.clock
+|sdcard|waitforresponse:inst14|RisingEdge:inst39
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+CLK => inst1.CLK
+IN => inst.DATAIN
 
 
-|sdcard|myclockdivider:inst123|mycounter:inst
-clock => lpm_counter:LPM_COUNTER_component.clock
-q[0] <= lpm_counter:LPM_COUNTER_component.q[0]
-q[1] <= lpm_counter:LPM_COUNTER_component.q[1]
-q[2] <= lpm_counter:LPM_COUNTER_component.q[2]
-q[3] <= lpm_counter:LPM_COUNTER_component.q[3]
-q[4] <= lpm_counter:LPM_COUNTER_component.q[4]
-q[5] <= lpm_counter:LPM_COUNTER_component.q[5]
-q[6] <= lpm_counter:LPM_COUNTER_component.q[6]
-q[7] <= lpm_counter:LPM_COUNTER_component.q[7]
-q[8] <= lpm_counter:LPM_COUNTER_component.q[8]
-q[9] <= lpm_counter:LPM_COUNTER_component.q[9]
-q[10] <= lpm_counter:LPM_COUNTER_component.q[10]
-q[11] <= lpm_counter:LPM_COUNTER_component.q[11]
-q[12] <= lpm_counter:LPM_COUNTER_component.q[12]
-q[13] <= lpm_counter:LPM_COUNTER_component.q[13]
-q[14] <= lpm_counter:LPM_COUNTER_component.q[14]
-q[15] <= lpm_counter:LPM_COUNTER_component.q[15]
-q[16] <= lpm_counter:LPM_COUNTER_component.q[16]
-q[17] <= lpm_counter:LPM_COUNTER_component.q[17]
-q[18] <= lpm_counter:LPM_COUNTER_component.q[18]
-
-
-|sdcard|myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component
-clock => cntr_nph:auto_generated.clock
-clk_en => ~NO_FANOUT~
-cnt_en => ~NO_FANOUT~
-updown => ~NO_FANOUT~
-aclr => ~NO_FANOUT~
-aset => ~NO_FANOUT~
-aconst => ~NO_FANOUT~
-aload => ~NO_FANOUT~
-sclr => ~NO_FANOUT~
-sset => ~NO_FANOUT~
-sconst => ~NO_FANOUT~
-sload => ~NO_FANOUT~
-data[0] => ~NO_FANOUT~
-data[1] => ~NO_FANOUT~
-data[2] => ~NO_FANOUT~
-data[3] => ~NO_FANOUT~
-data[4] => ~NO_FANOUT~
-data[5] => ~NO_FANOUT~
-data[6] => ~NO_FANOUT~
-data[7] => ~NO_FANOUT~
-data[8] => ~NO_FANOUT~
-data[9] => ~NO_FANOUT~
-data[10] => ~NO_FANOUT~
-data[11] => ~NO_FANOUT~
-data[12] => ~NO_FANOUT~
-data[13] => ~NO_FANOUT~
-data[14] => ~NO_FANOUT~
-data[15] => ~NO_FANOUT~
-data[16] => ~NO_FANOUT~
-data[17] => ~NO_FANOUT~
-data[18] => ~NO_FANOUT~
-cin => ~NO_FANOUT~
-q[0] <= cntr_nph:auto_generated.q[0]
-q[1] <= cntr_nph:auto_generated.q[1]
-q[2] <= cntr_nph:auto_generated.q[2]
-q[3] <= cntr_nph:auto_generated.q[3]
-q[4] <= cntr_nph:auto_generated.q[4]
-q[5] <= cntr_nph:auto_generated.q[5]
-q[6] <= cntr_nph:auto_generated.q[6]
-q[7] <= cntr_nph:auto_generated.q[7]
-q[8] <= cntr_nph:auto_generated.q[8]
-q[9] <= cntr_nph:auto_generated.q[9]
-q[10] <= cntr_nph:auto_generated.q[10]
-q[11] <= cntr_nph:auto_generated.q[11]
-q[12] <= cntr_nph:auto_generated.q[12]
-q[13] <= cntr_nph:auto_generated.q[13]
-q[14] <= cntr_nph:auto_generated.q[14]
-q[15] <= cntr_nph:auto_generated.q[15]
-q[16] <= cntr_nph:auto_generated.q[16]
-q[17] <= cntr_nph:auto_generated.q[17]
-q[18] <= cntr_nph:auto_generated.q[18]
-cout <= <GND>
-eq[0] <= <GND>
-eq[1] <= <GND>
-eq[2] <= <GND>
-eq[3] <= <GND>
-eq[4] <= <GND>
-eq[5] <= <GND>
-eq[6] <= <GND>
-eq[7] <= <GND>
-eq[8] <= <GND>
-eq[9] <= <GND>
-eq[10] <= <GND>
-eq[11] <= <GND>
-eq[12] <= <GND>
-eq[13] <= <GND>
-eq[14] <= <GND>
-eq[15] <= <GND>
-
-
-|sdcard|myclockdivider:inst123|mycounter:inst|lpm_counter:LPM_COUNTER_component|cntr_nph:auto_generated
-clock => counter_reg_bit[18].CLK
-clock => counter_reg_bit[17].CLK
-clock => counter_reg_bit[16].CLK
-clock => counter_reg_bit[15].CLK
-clock => counter_reg_bit[14].CLK
-clock => counter_reg_bit[13].CLK
-clock => counter_reg_bit[12].CLK
-clock => counter_reg_bit[11].CLK
-clock => counter_reg_bit[10].CLK
-clock => counter_reg_bit[9].CLK
-clock => counter_reg_bit[8].CLK
-clock => counter_reg_bit[7].CLK
-clock => counter_reg_bit[6].CLK
-clock => counter_reg_bit[5].CLK
-clock => counter_reg_bit[4].CLK
-clock => counter_reg_bit[3].CLK
-clock => counter_reg_bit[2].CLK
-clock => counter_reg_bit[1].CLK
-clock => counter_reg_bit[0].CLK
-q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= counter_reg_bit[4].DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= counter_reg_bit[5].DB_MAX_OUTPUT_PORT_TYPE
-q[6] <= counter_reg_bit[6].DB_MAX_OUTPUT_PORT_TYPE
-q[7] <= counter_reg_bit[7].DB_MAX_OUTPUT_PORT_TYPE
-q[8] <= counter_reg_bit[8].DB_MAX_OUTPUT_PORT_TYPE
-q[9] <= counter_reg_bit[9].DB_MAX_OUTPUT_PORT_TYPE
-q[10] <= counter_reg_bit[10].DB_MAX_OUTPUT_PORT_TYPE
-q[11] <= counter_reg_bit[11].DB_MAX_OUTPUT_PORT_TYPE
-q[12] <= counter_reg_bit[12].DB_MAX_OUTPUT_PORT_TYPE
-q[13] <= counter_reg_bit[13].DB_MAX_OUTPUT_PORT_TYPE
-q[14] <= counter_reg_bit[14].DB_MAX_OUTPUT_PORT_TYPE
-q[15] <= counter_reg_bit[15].DB_MAX_OUTPUT_PORT_TYPE
-q[16] <= counter_reg_bit[16].DB_MAX_OUTPUT_PORT_TYPE
-q[17] <= counter_reg_bit[17].DB_MAX_OUTPUT_PORT_TYPE
-q[18] <= counter_reg_bit[18].DB_MAX_OUTPUT_PORT_TYPE
+|sdcard|InstantRisingEdge:inst4
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+IN => inst2.IN0
+IN => inst1.DATAIN
+CLK => inst1.CLK
 
 
 |sdcard|sendcmd:inst3
@@ -1495,6 +1329,86 @@ result[46] <= sbit_w[334].DB_MAX_OUTPUT_PORT_TYPE
 result[47] <= sbit_w[335].DB_MAX_OUTPUT_PORT_TYPE
 
 
+|sdcard|mycounter2:inst5
+OUTCLK <= q[6].DB_MAX_OUTPUT_PORT_TYPE
+INCLK => counter2:inst.clock
+
+
+|sdcard|mycounter2:inst5|counter2:inst
+clock => lpm_counter:LPM_COUNTER_component.clock
+q[0] <= lpm_counter:LPM_COUNTER_component.q[0]
+q[1] <= lpm_counter:LPM_COUNTER_component.q[1]
+q[2] <= lpm_counter:LPM_COUNTER_component.q[2]
+q[3] <= lpm_counter:LPM_COUNTER_component.q[3]
+q[4] <= lpm_counter:LPM_COUNTER_component.q[4]
+q[5] <= lpm_counter:LPM_COUNTER_component.q[5]
+q[6] <= lpm_counter:LPM_COUNTER_component.q[6]
+
+
+|sdcard|mycounter2:inst5|counter2:inst|lpm_counter:LPM_COUNTER_component
+clock => cntr_4oh:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => ~NO_FANOUT~
+updown => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+data[3] => ~NO_FANOUT~
+data[4] => ~NO_FANOUT~
+data[5] => ~NO_FANOUT~
+data[6] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_4oh:auto_generated.q[0]
+q[1] <= cntr_4oh:auto_generated.q[1]
+q[2] <= cntr_4oh:auto_generated.q[2]
+q[3] <= cntr_4oh:auto_generated.q[3]
+q[4] <= cntr_4oh:auto_generated.q[4]
+q[5] <= cntr_4oh:auto_generated.q[5]
+q[6] <= cntr_4oh:auto_generated.q[6]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|sdcard|mycounter2:inst5|counter2:inst|lpm_counter:LPM_COUNTER_component|cntr_4oh:auto_generated
+clock => counter_reg_bit[6].CLK
+clock => counter_reg_bit[5].CLK
+clock => counter_reg_bit[4].CLK
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= counter_reg_bit[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= counter_reg_bit[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= counter_reg_bit[6].DB_MAX_OUTPUT_PORT_TYPE
+
+
 |sdcard|InstantRisingEdge:inst18
 OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 IN => inst2.IN0
@@ -1618,6 +1532,140 @@ DATA_OUT[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[5] <= data[5].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[6] <= data[6].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdcard|delay:inst27
+on <= ComparatorX:inst21.LS
+clkin => RegisterX:inst13.CLK
+CS <= <GND>
+CMD <= <GND>
+finished <= ComparatorX:inst21.EQ
+
+
+|sdcard|delay:inst27|ComparatorX:inst21
+A[0] => Equal0.IN8
+A[0] => LessThan0.IN9
+A[0] => LessThan1.IN9
+A[1] => Equal0.IN7
+A[1] => LessThan0.IN8
+A[1] => LessThan1.IN8
+A[2] => Equal0.IN6
+A[2] => LessThan0.IN7
+A[2] => LessThan1.IN7
+A[3] => Equal0.IN5
+A[3] => LessThan0.IN6
+A[3] => LessThan1.IN6
+A[4] => Equal0.IN4
+A[4] => LessThan0.IN5
+A[4] => LessThan1.IN5
+A[5] => Equal0.IN3
+A[5] => LessThan0.IN4
+A[5] => LessThan1.IN4
+A[6] => Equal0.IN2
+A[6] => LessThan0.IN3
+A[6] => LessThan1.IN3
+A[7] => Equal0.IN1
+A[7] => LessThan0.IN2
+A[7] => LessThan1.IN2
+A[8] => Equal0.IN0
+A[8] => LessThan0.IN1
+A[8] => LessThan1.IN1
+B[0] => Equal0.IN17
+B[0] => LessThan0.IN18
+B[0] => LessThan1.IN18
+B[1] => Equal0.IN16
+B[1] => LessThan0.IN17
+B[1] => LessThan1.IN17
+B[2] => Equal0.IN15
+B[2] => LessThan0.IN16
+B[2] => LessThan1.IN16
+B[3] => Equal0.IN14
+B[3] => LessThan0.IN15
+B[3] => LessThan1.IN15
+B[4] => Equal0.IN13
+B[4] => LessThan0.IN14
+B[4] => LessThan1.IN14
+B[5] => Equal0.IN12
+B[5] => LessThan0.IN13
+B[5] => LessThan1.IN13
+B[6] => Equal0.IN11
+B[6] => LessThan0.IN12
+B[6] => LessThan1.IN12
+B[7] => Equal0.IN10
+B[7] => LessThan0.IN11
+B[7] => LessThan1.IN11
+B[8] => Equal0.IN9
+B[8] => LessThan0.IN10
+B[8] => LessThan1.IN10
+EQ <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+LS <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+GR <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdcard|delay:inst27|RegisterX:inst13
+CLK => data[0].CLK
+CLK => data[1].CLK
+CLK => data[2].CLK
+CLK => data[3].CLK
+CLK => data[4].CLK
+CLK => data[5].CLK
+CLK => data[6].CLK
+CLK => data[7].CLK
+CLK => data[8].CLK
+LD => data_next.OUTPUTSELECT
+LD => data_next.OUTPUTSELECT
+LD => data_next.OUTPUTSELECT
+LD => data_next.OUTPUTSELECT
+LD => data_next.OUTPUTSELECT
+LD => data_next.OUTPUTSELECT
+LD => data_next.OUTPUTSELECT
+LD => data_next.OUTPUTSELECT
+LD => data_next.OUTPUTSELECT
+CL => data_next[8].OUTPUTSELECT
+CL => data_next[7].OUTPUTSELECT
+CL => data_next[6].OUTPUTSELECT
+CL => data_next[5].OUTPUTSELECT
+CL => data_next[4].OUTPUTSELECT
+CL => data_next[3].OUTPUTSELECT
+CL => data_next[2].OUTPUTSELECT
+CL => data_next[1].OUTPUTSELECT
+CL => data_next[0].OUTPUTSELECT
+INC => data_next.OUTPUTSELECT
+INC => data_next.OUTPUTSELECT
+INC => data_next.OUTPUTSELECT
+INC => data_next.OUTPUTSELECT
+INC => data_next.OUTPUTSELECT
+INC => data_next.OUTPUTSELECT
+INC => data_next.OUTPUTSELECT
+INC => data_next.OUTPUTSELECT
+INC => data_next.OUTPUTSELECT
+DEC => data_next.OUTPUTSELECT
+DEC => data_next.OUTPUTSELECT
+DEC => data_next.OUTPUTSELECT
+DEC => data_next.OUTPUTSELECT
+DEC => data_next.OUTPUTSELECT
+DEC => data_next.OUTPUTSELECT
+DEC => data_next.OUTPUTSELECT
+DEC => data_next.OUTPUTSELECT
+DEC => data_next.OUTPUTSELECT
+DATA_IN[0] => data_next.DATAB
+DATA_IN[1] => data_next.DATAB
+DATA_IN[2] => data_next.DATAB
+DATA_IN[3] => data_next.DATAB
+DATA_IN[4] => data_next.DATAB
+DATA_IN[5] => data_next.DATAB
+DATA_IN[6] => data_next.DATAB
+DATA_IN[7] => data_next.DATAB
+DATA_IN[8] => data_next.DATAB
+DATA_OUT[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[5] <= data[5].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[6] <= data[6].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[7] <= data[7].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[8] <= data[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |sdcard|MultiplexerX:inst6
@@ -2116,114 +2164,6 @@ DATA_OUT[28] <= data[28].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[29] <= data[29].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[30] <= data[30].DB_MAX_OUTPUT_PORT_TYPE
 DATA_OUT[31] <= data[31].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|sdcard|waitforresponse:inst14
-DAP[0] <= RegisterX:inst47.DATA_OUT[0]
-DAP[1] <= RegisterX:inst47.DATA_OUT[1]
-DAP[2] <= RegisterX:inst47.DATA_OUT[2]
-DAP[3] <= RegisterX:inst47.DATA_OUT[3]
-DAP[4] <= RegisterX:inst47.DATA_OUT[4]
-DAP[5] <= RegisterX:inst47.DATA_OUT[5]
-DAP[6] <= RegisterX:inst47.DATA_OUT[6]
-DAP[7] <= RegisterX:inst47.DATA_OUT[7]
-clk => RegisterX:inst47.CLK
-clk => inst32.CLK
-clk => inst31.CLK
-clk => inst30.CLK
-clk => inst29.CLK
-clk => inst28.CLK
-clk => inst27.CLK
-clk => inst26.CLK
-clk => inst25.CLK
-clk => inst42.CLK
-clk => inst2.CLK
-clk => RisingEdge:inst39.CLK
-clk => inst15.CLK
-clk => inst16.CLK
-clk => inst17.CLK
-clk => inst19.CLK
-clk => inst20.CLK
-clk => inst21.CLK
-clk => inst22.CLK
-clk => inst23.CLK
-q => inst38.IN0
-q => inst42.DATAIN
-q => inst15.DATAIN
-startListening => inst2.IN1
-
-
-|sdcard|waitforresponse:inst14|RegisterX:inst47
-CLK => data[0].CLK
-CLK => data[1].CLK
-CLK => data[2].CLK
-CLK => data[3].CLK
-CLK => data[4].CLK
-CLK => data[5].CLK
-CLK => data[6].CLK
-CLK => data[7].CLK
-LD => data_next.OUTPUTSELECT
-LD => data_next.OUTPUTSELECT
-LD => data_next.OUTPUTSELECT
-LD => data_next.OUTPUTSELECT
-LD => data_next.OUTPUTSELECT
-LD => data_next.OUTPUTSELECT
-LD => data_next.OUTPUTSELECT
-LD => data_next.OUTPUTSELECT
-CL => data_next[7].OUTPUTSELECT
-CL => data_next[6].OUTPUTSELECT
-CL => data_next[5].OUTPUTSELECT
-CL => data_next[4].OUTPUTSELECT
-CL => data_next[3].OUTPUTSELECT
-CL => data_next[2].OUTPUTSELECT
-CL => data_next[1].OUTPUTSELECT
-CL => data_next[0].OUTPUTSELECT
-INC => data_next.OUTPUTSELECT
-INC => data_next.OUTPUTSELECT
-INC => data_next.OUTPUTSELECT
-INC => data_next.OUTPUTSELECT
-INC => data_next.OUTPUTSELECT
-INC => data_next.OUTPUTSELECT
-INC => data_next.OUTPUTSELECT
-INC => data_next.OUTPUTSELECT
-DEC => data_next.OUTPUTSELECT
-DEC => data_next.OUTPUTSELECT
-DEC => data_next.OUTPUTSELECT
-DEC => data_next.OUTPUTSELECT
-DEC => data_next.OUTPUTSELECT
-DEC => data_next.OUTPUTSELECT
-DEC => data_next.OUTPUTSELECT
-DEC => data_next.OUTPUTSELECT
-DATA_IN[0] => data_next.DATAB
-DATA_IN[1] => data_next.DATAB
-DATA_IN[2] => data_next.DATAB
-DATA_IN[3] => data_next.DATAB
-DATA_IN[4] => data_next.DATAB
-DATA_IN[5] => data_next.DATAB
-DATA_IN[6] => data_next.DATAB
-DATA_IN[7] => data_next.DATAB
-DATA_OUT[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
-DATA_OUT[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
-DATA_OUT[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
-DATA_OUT[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
-DATA_OUT[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
-DATA_OUT[5] <= data[5].DB_MAX_OUTPUT_PORT_TYPE
-DATA_OUT[6] <= data[6].DB_MAX_OUTPUT_PORT_TYPE
-DATA_OUT[7] <= data[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|sdcard|waitforresponse:inst14|RisingEdge:inst39
-OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-CLK => inst.CLK
-CLK => inst1.CLK
-IN => inst.DATAIN
-
-
-|sdcard|InstantRisingEdge:inst4
-OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-IN => inst2.IN0
-IN => inst1.DATAIN
-CLK => inst1.CLK
 
 
 |sdcard|InstantRisingEdge:inst16

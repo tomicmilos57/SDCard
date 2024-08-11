@@ -752,6 +752,24 @@ applicable agreement for further details.
 )
 (pin
 	(bidir)
+	(rect 1384 184 1560 200)
+	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
+	(text "DAT0/IN" (rect 90 0 132 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 56 4)(pt 78 4))
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 56 12)(pt 78 12))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 78 12)(pt 82 8))
+		(line (pt 56 4)(pt 52 8))
+		(line (pt 52 8)(pt 56 12))
+	)
+	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 1560 200 1624 216))
+)
+(pin
+	(bidir)
 	(rect 1656 96 1832 112)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "CMD/OUT" (rect 90 0 140 12)(font "Arial" ))
@@ -770,24 +788,6 @@ applicable agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 1656 128 1832 144)
-	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
-	(text "DAT0/IN" (rect 90 0 132 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 56 4)(pt 78 4))
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 56 12)(pt 78 12))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 78 12)(pt 82 8))
-		(line (pt 56 4)(pt 52 8))
-		(line (pt 52 8)(pt 56 12))
-	)
-	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1832 144 1896 160))
-)
-(pin
-	(bidir)
 	(rect 1656 -48 1832 -32)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "DAT3/SSnot" (rect 90 0 150 12)(font "Arial" ))
@@ -802,7 +802,6 @@ applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1832 -32 1896 -16))
 )
 (symbol
 	(rect 120 496 152 512)
@@ -1693,28 +1692,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -216 136 -80 232)
-	(text "myclockdivider" (rect 5 0 88 14)(font "Arial" (font_size 8)))
-	(text "inst123" (rect 8 80 43 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "INCLK" (rect 0 0 34 14)(font "Arial" (font_size 8)))
-		(text "INCLK" (rect 21 27 55 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 136 32)
-		(output)
-		(text "OUTCLK" (rect 0 0 48 14)(font "Arial" (font_size 8)))
-		(text "OUTCLK" (rect 67 27 115 41)(font "Arial" (font_size 8)))
-		(line (pt 136 32)(pt 120 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 120 80))
-	)
-)
-(symbol
 	(rect -56 296 64 424)
 	(text "delay" (rect 5 0 35 14)(font "Arial" (font_size 8)))
 	(text "inst27" (rect 8 112 37 124)(font "Arial" ))
@@ -2040,6 +2017,28 @@ applicable agreement for further details.
 		(line (pt 14 7)(pt 32 16))
 	)
 )
+(symbol
+	(rect -216 136 -80 232)
+	(text "mycounter2" (rect 5 0 72 14)(font "Arial" (font_size 8)))
+	(text "inst5" (rect 8 80 31 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "INCLK" (rect 0 0 34 14)(font "Arial" (font_size 8)))
+		(text "INCLK" (rect 21 27 55 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 136 32)
+		(output)
+		(text "OUTCLK" (rect 0 0 48 14)(font "Arial" (font_size 8)))
+		(text "OUTCLK" (rect 67 27 115 41)(font "Arial" (font_size 8)))
+		(line (pt 136 32)(pt 120 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 120 80))
+	)
+)
 (connector
 	(text "clk" (rect 1224 440 1238 452)(font "Arial" ))
 	(pt 1288 456)
@@ -2057,14 +2056,6 @@ applicable agreement for further details.
 (connector
 	(pt 1496 440)
 	(pt 1632 440)
-)
-(connector
-	(pt 1656 136)
-	(pt 1568 136)
-)
-(connector
-	(pt 1568 136)
-	(pt 1568 456)
 )
 (connector
 	(text "clk" (rect 1600 456 1614 468)(font "Arial" ))
@@ -2100,14 +2091,6 @@ applicable agreement for further details.
 	(text "button_middle" (rect 425 888 493 900)(font "Arial" ))
 	(pt 488 904)
 	(pt 416 904)
-)
-(connector
-	(pt 1504 456)
-	(pt 1568 456)
-)
-(connector
-	(pt 1568 456)
-	(pt 1632 456)
 )
 (connector
 	(pt 1504 544)
@@ -2224,11 +2207,6 @@ applicable agreement for further details.
 	(pt 1440 -136)
 )
 (connector
-	(text "out" (rect 1375 80 1390 92)(font "Arial" ))
-	(pt 1656 104)
-	(pt 1032 104)
-)
-(connector
 	(pt 944 -32)
 	(pt 1032 -32)
 )
@@ -2239,14 +2217,6 @@ applicable agreement for further details.
 (connector
 	(pt 1032 80)
 	(pt 944 80)
-)
-(connector
-	(pt 1032 -32)
-	(pt 1032 80)
-)
-(connector
-	(pt 1032 80)
-	(pt 1032 104)
 )
 (connector
 	(text "cmdoutput" (rect 840 64 891 76)(font "Arial" ))
@@ -2272,80 +2242,6 @@ applicable agreement for further details.
 	(text "0" (rect 1232 456 1237 468)(font "Arial" ))
 	(pt 1288 472)
 	(pt 1224 472)
-)
-(connector
-	(text "dap0" (rect 1288 592 1311 604)(font "Arial" ))
-	(pt 1280 608)
-	(pt 1320 608)
-)
-(connector
-	(text "dap1" (rect 1288 616 1311 628)(font "Arial" ))
-	(pt 1280 632)
-	(pt 1320 632)
-)
-(connector
-	(text "dap2" (rect 1288 640 1311 652)(font "Arial" ))
-	(pt 1280 656)
-	(pt 1320 656)
-)
-(connector
-	(text "dap3" (rect 1288 664 1311 676)(font "Arial" ))
-	(pt 1280 680)
-	(pt 1320 680)
-)
-(connector
-	(text "dap4" (rect 1285 688 1308 700)(font "Arial" ))
-	(pt 1280 704)
-	(pt 1320 704)
-)
-(connector
-	(text "dap5" (rect 1285 712 1308 724)(font "Arial" ))
-	(pt 1280 728)
-	(pt 1320 728)
-)
-(connector
-	(text "dap6" (rect 1285 736 1308 748)(font "Arial" ))
-	(pt 1280 752)
-	(pt 1320 752)
-)
-(connector
-	(text "dap7" (rect 1283 760 1306 772)(font "Arial" ))
-	(pt 1280 776)
-	(pt 1320 776)
-)
-(connector
-	(pt 1656 -136)
-	(pt 1656 -40)
-)
-(connector
-	(text "cs" (rect 1624 -98 1636 -87)(font "Arial" )(vertical))
-	(pt 1656 -224)
-	(pt 1656 -136)
-)
-(connector
-	(text "onsync" (rect 1440 616 1476 628)(font "Arial" ))
-	(pt 1496 632)
-	(pt 1432 632)
-)
-(connector
-	(text "ondelay" (rect 1440 640 1478 652)(font "Arial" ))
-	(pt 1496 656)
-	(pt 1432 656)
-)
-(connector
-	(text "sending" (rect 1440 664 1477 676)(font "Arial" ))
-	(pt 1496 680)
-	(pt 1432 680)
-)
-(connector
-	(text "cs" (rect 1440 712 1451 724)(font "Arial" ))
-	(pt 1496 728)
-	(pt 1432 728)
-)
-(connector
-	(text "out" (rect 1440 688 1455 700)(font "Arial" ))
-	(pt 1496 704)
-	(pt 1432 704)
 )
 (connector
 	(text "onsync" (rect 904 -95 916 -59)(font "Arial" )(vertical))
@@ -2536,16 +2432,6 @@ applicable agreement for further details.
 	(pt 1440 856)
 )
 (connector
-	(text "finsync" (rect 1440 736 1477 748)(font "Arial" ))
-	(pt 1496 752)
-	(pt 1432 752)
-)
-(connector
-	(text "findelay" (rect 1436 760 1476 772)(font "Arial" ))
-	(pt 1432 776)
-	(pt 1496 776)
-)
-(connector
 	(pt 656 -344)
 	(pt 616 -344)
 )
@@ -2579,11 +2465,6 @@ applicable agreement for further details.
 	(text "sending" (rect 528 -320 565 -308)(font "Arial" ))
 	(pt 568 -304)
 	(pt 520 -304)
-)
-(connector
-	(text "nothing" (rect 1440 592 1475 604)(font "Arial" ))
-	(pt 1496 608)
-	(pt 1432 608)
 )
 (connector
 	(pt 1032 -144)
@@ -2671,6 +2552,137 @@ applicable agreement for further details.
 (connector
 	(pt 576 664)
 	(pt 744 664)
+)
+(connector
+	(text "1" (rect 1608 224 1613 236)(font "Arial" ))
+	(pt 1656 240)
+	(pt 1600 240)
+)
+(connector
+	(text "onsync" (rect 1184 616 1220 628)(font "Arial" ))
+	(pt 1240 632)
+	(pt 1176 632)
+)
+(connector
+	(text "ondelay" (rect 1184 640 1222 652)(font "Arial" ))
+	(pt 1240 656)
+	(pt 1176 656)
+)
+(connector
+	(text "sending" (rect 1184 664 1221 676)(font "Arial" ))
+	(pt 1240 680)
+	(pt 1176 680)
+)
+(connector
+	(text "cs" (rect 1184 712 1195 724)(font "Arial" ))
+	(pt 1240 728)
+	(pt 1176 728)
+)
+(connector
+	(text "out" (rect 1184 688 1199 700)(font "Arial" ))
+	(pt 1240 704)
+	(pt 1176 704)
+)
+(connector
+	(text "finsync" (rect 1184 736 1221 748)(font "Arial" ))
+	(pt 1240 752)
+	(pt 1176 752)
+)
+(connector
+	(text "findelay" (rect 1180 760 1220 772)(font "Arial" ))
+	(pt 1176 776)
+	(pt 1240 776)
+)
+(connector
+	(text "nothing" (rect 1184 592 1219 604)(font "Arial" ))
+	(pt 1240 608)
+	(pt 1176 608)
+)
+(connector
+	(text "dap0" (rect 1464 592 1487 604)(font "Arial" ))
+	(pt 1456 608)
+	(pt 1496 608)
+)
+(connector
+	(text "dap1" (rect 1464 616 1487 628)(font "Arial" ))
+	(pt 1456 632)
+	(pt 1496 632)
+)
+(connector
+	(text "dap2" (rect 1464 640 1487 652)(font "Arial" ))
+	(pt 1456 656)
+	(pt 1496 656)
+)
+(connector
+	(text "dap3" (rect 1464 664 1487 676)(font "Arial" ))
+	(pt 1456 680)
+	(pt 1496 680)
+)
+(connector
+	(text "dap4" (rect 1461 688 1484 700)(font "Arial" ))
+	(pt 1456 704)
+	(pt 1496 704)
+)
+(connector
+	(text "dap5" (rect 1461 712 1484 724)(font "Arial" ))
+	(pt 1456 728)
+	(pt 1496 728)
+)
+(connector
+	(text "dap6" (rect 1461 736 1484 748)(font "Arial" ))
+	(pt 1456 752)
+	(pt 1496 752)
+)
+(connector
+	(text "dap7" (rect 1459 760 1482 772)(font "Arial" ))
+	(pt 1456 776)
+	(pt 1496 776)
+)
+(connector
+	(pt 1568 456)
+	(pt 1568 136)
+)
+(connector
+	(pt 1568 136)
+	(pt 1360 136)
+)
+(connector
+	(pt 1504 456)
+	(pt 1568 456)
+)
+(connector
+	(pt 1568 456)
+	(pt 1632 456)
+)
+(connector
+	(pt 1384 192)
+	(pt 1360 192)
+)
+(connector
+	(pt 1360 192)
+	(pt 1360 136)
+)
+(connector
+	(text "out" (rect 1375 80 1390 92)(font "Arial" ))
+	(pt 1032 104)
+	(pt 1656 104)
+)
+(connector
+	(pt 1032 -32)
+	(pt 1032 80)
+)
+(connector
+	(pt 1032 80)
+	(pt 1032 104)
+)
+(connector
+	(pt 1656 -224)
+	(pt 1656 -136)
+)
+(connector
+	(text "cs" (rect 1624 -98 1636 -87)(font "Arial" )(vertical))
+	(pt 1656 -136)
+	(pt 1656 -40)
 )
 (junction (pt 1568 456))
 (junction (pt 1656 -312))
