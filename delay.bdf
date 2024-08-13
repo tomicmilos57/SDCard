@@ -132,6 +132,32 @@ applicable agreement for further details.
 	)
 )
 (symbol
+	(rect 936 216 984 248)
+	(text "NOT" (rect 27 0 47 10)(font "Arial" (font_size 6)))
+	(text "inst24" (rect 16 21 45 33)(font "Arial" ))
+	(port
+		(pt 48 16)
+		(input)
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 35 7 46 19)(font "Courier New" (bold))(invisible))
+		(line (pt 48 16)(pt 35 16))
+	)
+	(port
+		(pt 0 16)
+		(output)
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect -1 7 16 19)(font "Courier New" (bold))(invisible))
+		(line (pt 9 16)(pt 0 16))
+	)
+	(drawing
+		(line (pt 35 25)(pt 35 7))
+		(line (pt 35 7)(pt 17 16))
+		(line (pt 35 25)(pt 17 16))
+		(circle (rect 9 12 17 20))
+	)
+	(flipy)
+)
+(symbol
 	(rect 648 200 880 280)
 	(text "RegisterX" (rect 5 0 52 12)(font "Arial" ))
 	(text "inst13" (rect 8 64 37 76)(font "Arial" ))
@@ -186,7 +212,7 @@ applicable agreement for further details.
 	)
 	(parameter
 		"size"
-		"9"
+		"20"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
@@ -241,39 +267,13 @@ applicable agreement for further details.
 	)
 	(parameter
 		"size"
-		"9"
+		"20"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 144 96))
 	)
 	(annotation_block (parameter)(rect 944 304 1126 332))
-)
-(symbol
-	(rect 936 216 984 248)
-	(text "NOT" (rect 27 0 47 10)(font "Arial" (font_size 6)))
-	(text "inst24" (rect 16 21 45 33)(font "Arial" ))
-	(port
-		(pt 48 16)
-		(input)
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(text "IN" (rect 35 7 46 19)(font "Courier New" (bold))(invisible))
-		(line (pt 48 16)(pt 35 16))
-	)
-	(port
-		(pt 0 16)
-		(output)
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect -1 7 16 19)(font "Courier New" (bold))(invisible))
-		(line (pt 9 16)(pt 0 16))
-	)
-	(drawing
-		(line (pt 35 25)(pt 35 7))
-		(line (pt 35 7)(pt 17 16))
-		(line (pt 35 25)(pt 17 16))
-		(circle (rect 9 12 17 20))
-	)
-	(flipy)
 )
 (connector
 	(pt 760 280)
@@ -345,7 +345,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "1,1,1,1,1,1,1,1,1" (rect 664 368 745 380)(font "Arial" ))
+	(text "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1" (rect 608 368 793 380)(font "Arial" ))
 	(pt 784 384)
 	(pt 656 384)
 	(bus)
